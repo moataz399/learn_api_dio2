@@ -8,7 +8,7 @@ class UserInitial extends UserState {}
 
 class UserLoaded extends UserState {
 
-  final List<dynamic> user;
+  final List<User> user;
 
   UserLoaded(this.user);
 }

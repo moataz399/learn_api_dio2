@@ -6,7 +6,7 @@ class UserRepository {
 
   UserRepository(this.userServices);
 
-  Future<List<dynamic>> getUserData() async {
+  Future<List<User>> getUserData() async {
     final userdata = await userServices.getUserData();
     return userdata.map((element) => User.fromJson(element)).toList();
   }

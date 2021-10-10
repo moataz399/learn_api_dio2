@@ -22,12 +22,15 @@ class UserServices {
     Response response;
     try {
       response = await _dio.get('/api/users?page=2');
-      print(response.data.toString());
 
       print(response.data['data'].toString());
+      print(response.data['data'][1]['email'].toString());
+
       return response.data['data'];
     } on DioError catch (e) {
-    debugPrint(e.toString());
+      debugPrint(e.toString());
+      debugPrint(e.message);
+
       return [];
     }
   }

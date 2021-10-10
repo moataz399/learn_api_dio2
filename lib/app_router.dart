@@ -21,7 +21,7 @@ class AppRouter {
     switch (settings.name) {
       case homePage:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
+            builder: (_) => BlocProvider<UserCubit>(
                   create: (BuildContext context) => userCubit,
                   child: const HomePage(),
                 ));

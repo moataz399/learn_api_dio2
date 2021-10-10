@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_api_dio/business_logic/user_cubit.dart';
@@ -11,13 +13,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- late  List<dynamic> userData;
+ late  List<User> userData;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-     BlocProvider.of<UserCubit>(context).getUserData();
+    BlocProvider.of<UserCubit>(context).getUserData();
   }
 
   @override
@@ -33,6 +35,11 @@ class _HomePageState extends State<HomePage> {
       builder: (context, state) {
         if (state is UserLoaded) {
           userData = (state).user;
+          debugPrint(userData[0].data.lastName);
+          print(userData[1].data.email);
+          print(userData[2].data.firstName);
+          print(userData[3].data.id);
+          print(state.user);
           return ListView.separated(
               itemBuilder: (context, index) {
                 return UserItem(user: userData[index]);

@@ -1,22 +1,11 @@
-
 class User {
-  late UserData data;
-
-  User(this.data);
-
-  User.fromJson(Map<String, dynamic> json) {
-    data = json['data'];
-  }
-}
-
-class UserData {
   int id;
   String email;
   String firstName;
   String lastName;
   String avatar;
 
-  UserData({
+  User({
     required this.id,
     required this.email,
     required this.firstName,
@@ -24,7 +13,7 @@ class UserData {
     required this.avatar,
   });
 
-  factory UserData.fromJson(Map<String, dynamic> json) => UserData(
+  factory User.fromJson(Map<String, dynamic> json) => User(
         id: json["id"],
         email: json["email"],
         firstName: json["first_name"],

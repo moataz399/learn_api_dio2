@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_api_dio/business_logic/user_cubit.dart';
-import 'package:learn_api_dio/data/models/user_model.dart';
 import 'package:learn_api_dio/presentation/widgets/components.dart';
 
 class HomePage extends StatefulWidget {

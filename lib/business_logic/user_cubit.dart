@@ -1,10 +1,6 @@
-// ignore_for_file: avoid_print
-
 import 'package:bloc/bloc.dart';
-import 'package:learn_api_dio/data/models/user_model.dart';
 import 'package:learn_api_dio/data/repositeries/user_repository.dart';
 import 'package:meta/meta.dart';
-
 part 'user_state.dart';
 
 class UserCubit extends Cubit<UserState> {

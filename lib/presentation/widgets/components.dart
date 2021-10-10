@@ -10,9 +10,9 @@ class UserItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        user.data.email,
+        user.email,
       ),
-      subtitle: Text(user.data.lastName),
+      subtitle: Text(user.lastName),
     );
   }
 }
@@ -26,16 +26,16 @@ class UserTEst extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        userTest.data.firstName,
+        userTest.firstName,
       ),
-      subtitle: Text('${userTest.data.id}'),
+      subtitle: Text('${userTest.id}'),
     );
   }
 }
 
 Widget item(User user) => ListTile(
       title: Text(
-        user.data.email,
+        user.email,
       ),
-      subtitle: Text(user.data.lastName),
+      subtitle: Text(user.lastName),
     );

@@ -8,6 +8,8 @@ class UserRepository {
 
   Future<List<dynamic>> getUserData() async {
     final userdata = await userServices.getUserData();
+    print(userdata);
+    print('='*8);
     return userdata.map((element) => User.fromJson(element)).toList();
   }
 }

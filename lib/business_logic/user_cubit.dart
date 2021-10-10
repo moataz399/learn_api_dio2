@@ -7,22 +7,15 @@ class UserCubit extends Cubit<UserState> {
   UserCubit(this._userRepository) : super(UserInitial());
   final UserRepository _userRepository;
 
-   List<User> users =[];
+   List<dynamic> user=[] ;
 
-  List<User> getUserData() {
+  List<dynamic> getUserData() {
     _userRepository.getUserData().then((user) {
       emit(UserLoaded(user));
-      users = user;
-      print(users[0].data.firstName);
-      print(user[0].data.lastName);
-      print(users[0].data.email);
-      print(user[0].data.lastName);
-      print(users[0].data.firstName);
-      print(user[0].data.email);
-      print(users[0].data.lastName);
-    }).catchError((error) {
+      this.user = user;
+    }).catchError((error){
       print(error.toString());
     });
-    return users;
+    return user;
   }
 }
